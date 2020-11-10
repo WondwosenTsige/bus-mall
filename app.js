@@ -1,20 +1,42 @@
+'use strict'
 
-var imageElementOne = document.getElementById('image-one');
-var imageElementTwo = document.getElementById('image-two');
-var imageElementThree = document.getElementById('image-three');
+var productImageOne = document.getElementById('image-one');
+var productImageTwo = document.getElementById('image-two');
+var productImageThree = document.getElementById('image-three');
+
+
+
+
 
 var allProducts = [];
 
-imageElementOne.src = 'img/water-can/jpg';
-imageElementOne.productName = 'water can';
-imageElementTwo.src = 'img/wine-glass/jpg';
-imageElementTwo.productName = 'wine glass';
-imageElementTwo.src = 'img/sweep/jpg';
-imageElementThree.productName = 'sweep boy';
-
-var Products = function(src, name){
-    this.filePath = src;
-    this.productName = name;
+var Product = function(name){
+    this.filePath = `img/${name}.jpg`, `img/${name}.gif`, `img/${name}.png`;
+    this.title = name;
 
     allProducts.push(this);
+
 }
+
+new Product ('boots');
+new Product ('pen');
+new Product ('banana');
+new Product ('bag');
+
+function randomIndexOfProductGenerator(){
+return Math.floor(Math.random() * allProducts.lenght);
+}
+
+function render(productImage){
+var randomIndexNumber = randomIndexOfProductGenerator(0, allProducts.lenght-1);
+
+
+
+productImage.src = allProducts[randomIndexNumber].filePath;
+productImage.title = allProducts[randomIndexNumber].title;
+
+
+}
+
+render(productImageOne);
+render(productImageTwo);
