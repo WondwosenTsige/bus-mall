@@ -7,7 +7,6 @@ var productImageThree = document.getElementById('image-three');
 
 
 
-
 var allProducts = [];
 
 var Product = function(name){
