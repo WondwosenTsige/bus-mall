@@ -104,7 +104,7 @@ function voteForProductImages(event){
       for (var i = 0; i < allProducts.length; i++) {
         var li = document.createElement('li');
         li.textContent = `${allProducts[i].name} had ${allProducts[i].votes} votes, and was seen ${allProducts[i].views} times.`;
-        catalogList.appendChild(li);
+        listElement.appendChild(li);
       }
     }
     renderResults();
