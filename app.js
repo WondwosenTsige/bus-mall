@@ -103,13 +103,12 @@ function voteForProductImages(event){
     function renderResults() {
       for (var i = 0; i < allProducts.length; i++) {
         var li = document.createElement('li');
-        li.textContent = `${allProducts[i].name} had ${allProducts[i].votes} votes, and was seen ${allProducts[i].views} times.`;
+        li.textContent = `${allProducts[i].title} had ${allProducts[i].votes} votes, and was seen ${allProducts[i].views} times.`;
         listElement.appendChild(li);
       }
     }
     renderResults();
     
-
   if(totalVotes === 5){
     allImagesContainer.removeEventListener('click', voteForProductImages);
   }
@@ -121,34 +120,3 @@ allImagesContainer.addEventListener('click', voteForProductImages);
 render();
 renderResults();
 
-
-//////////////////////////////////////////////////////////
-
-
-
-
-/*function render(productImage){
-var randomIndexNumber = randomIndexOfProductGenerator(0, allProducts.lenght-1);
-
-
-
-productImage.src = allProducts[randomIndexNumber].filePath;
-productImage.title = allProducts[randomIndexNumber].title;
-
-
-}
-
-render(productImageOne);
-render(productImageTwo);
-
-productImageOne.src = allProducts[firstIndex].filePath;
-productImageOne.title = allProducts[firstIndex].title;
-allProducts[firstIndex].views++;
-
-productImageTwo.src = allProducts[secondIndex].filePath;
-productImageTwo.title = allProducts[secondIndex].title;
-allProducts[secondIndex].views++;
-
-productImageThree.src = allProducts[thirdIndex].filePath;
-productImageThree.title = allProducts[thirdIndex].title;
-allProducts[thirdIndex].views++;*/
