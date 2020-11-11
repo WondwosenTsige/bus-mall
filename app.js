@@ -109,7 +109,7 @@ function voteForProductImages(event){
     }
     renderResults();
     
-  if(totalVotes === 5){
+  if(totalVotes === 25){
     allImagesContainer.removeEventListener('click', voteForProductImages);
   }
 
