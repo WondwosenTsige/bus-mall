@@ -107,7 +107,11 @@ function voteForProductImages(event){
         allProducts[i].votes++;
         totalVotes++;
 
-        
+       
+        var stringifiedImages = JSON.stringify(allProducts);
+  
+        localStorage.setItem('Images', stringifiedImages);
+
       }
     }
 
@@ -115,7 +119,7 @@ function voteForProductImages(event){
     
     
     
-    if(totalVotes === 5){
+    if(totalVotes === 15){
       productImageOne.removeEventListener('click', voteForProductImages);
       productImageTwo.removeEventListener('click', voteForProductImages);
       productImageThree.removeEventListener('click', voteForProductImages);
@@ -131,7 +135,7 @@ productImageOne.addEventListener('click', voteForProductImages);
 productImageTwo.addEventListener('click', voteForProductImages);
 productImageThree.addEventListener('click', voteForProductImages);
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function generateChartData(){
   for(var i=0; i<allProducts.length; i++){
