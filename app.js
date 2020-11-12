@@ -135,9 +135,7 @@ render();
 
 
 
-//////////////////////////////////
-
-/*function generateChartData(){
+function generateChartData(){
   for(var i=0; i<allImages.length; i++){
     namesArray.push(allImages[i].alt);
     votesArray.push(allImages[i].votes);
@@ -194,4 +192,4 @@ function generateChart(){
   });
 }
 
-render();*/
+render();
