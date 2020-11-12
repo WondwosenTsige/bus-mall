@@ -10,6 +10,8 @@ var listElement = document.getElementById('List');
 var uniqueRandomImages = [];
 var totalVotes = 0;
 var allProducts = [];
+var namesArray = [];
+var votesArray =[];
 
 var Product = function(name, endOfFile){               // constructor for prodecus
     this.filePath = `img/${name}.${endOfFile}`;
@@ -117,6 +119,8 @@ function voteForProductImages(event){
       productImageOne.removeEventListener('click', voteForProductImages);
       productImageTwo.removeEventListener('click', voteForProductImages);
       productImageThree.removeEventListener('click', voteForProductImages);
+      generateChart();
+      generateChartData();
       renderResults();
 
   }
@@ -128,17 +132,11 @@ productImageTwo.addEventListener('click', voteForProductImages);
 productImageThree.addEventListener('click', voteForProductImages);
 
 
-render();
-
-
-
-
-
 
 function generateChartData(){
-  for(var i=0; i<allImages.length; i++){
-    namesArray.push(allImages[i].alt);
-    votesArray.push(allImages[i].votes);
+  for(var i=0; i<allProducts.length; i++){
+    namesArray.push(allProducts[i].title);
+    votesArray.push(allProducts[i].votes);
   }
 }
 
@@ -149,9 +147,14 @@ function generateChart(){
       data: {
           labels: namesArray, 
           datasets: [{
-              label: '# of Bananas',
+              label: 'Nunber of Votes',
               data: votesArray,
               backgroundColor: [
+
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',
                   'rgba(255, 206, 86, 0.2)',
@@ -159,10 +162,6 @@ function generateChart(){
                   'rgba(153, 102, 255, 0.2)',
                   'rgba(255, 159, 64, 0.2)',
                   'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',
                   'rgba(255, 206, 86, 0.2)',
