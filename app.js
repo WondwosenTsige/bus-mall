@@ -135,12 +135,6 @@ render();
 
 
 
-
-
-
-render();
-
-
 //////////////////////////////////
 
 /*function generateChartData(){
