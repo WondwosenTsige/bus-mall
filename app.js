@@ -115,7 +115,7 @@ function voteForProductImages(event){
     
     
     
-    if(totalVotes === 5){
+    if(totalVotes === 25){
       productImageOne.removeEventListener('click', voteForProductImages);
       productImageTwo.removeEventListener('click', voteForProductImages);
       productImageThree.removeEventListener('click', voteForProductImages);
