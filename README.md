@@ -12,4 +12,3 @@ This is the Bus mall project assignment for the partial fullfilment of Code-201 
 
 - Thank you Skyler and Chance for answering all those question again and again 
 
-
