@@ -109,8 +109,7 @@ function voteForProductImages(event){
 
        
         var stringifiedImages = JSON.stringify(allProducts);
-  
-        localStorage.setItem('Images', stringifiedImages);
+        localStorage.setItem('product-images', stringifiedImages);
 
       }
     }
@@ -135,7 +134,7 @@ productImageOne.addEventListener('click', voteForProductImages);
 productImageTwo.addEventListener('click', voteForProductImages);
 productImageThree.addEventListener('click', voteForProductImages);
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 function generateChartData(){
   for(var i=0; i<allProducts.length; i++){
@@ -172,6 +171,7 @@ function generateChart(){
                   'rgba(75, 192, 192, 0.2)',
                   'rgba(153, 102, 255, 0.2)'
               ],
+
               borderColor: [
                   'rgba(255, 99, 132, 1)',
                   'rgba(54, 162, 235, 1)',
