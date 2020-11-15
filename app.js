@@ -101,7 +101,6 @@ function voteForProductImages(event){
     var titleOfClick = event.target.title;
 
 
-    console.log(titleOfClick);
     for(var i=0; i<allProducts.length; i++){
       if(titleOfClick === allProducts[i].title){
         allProducts[i].votes++;
