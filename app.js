@@ -12,8 +12,9 @@ var totalVotes = 0;
 var allProducts = [];
 var namesArray = [];
 var votesArray =[];
+var viewsArray = [];
 
-var Product = function(name, endOfFile){               // constructor for prodecus
+var Product = function(name, endOfFile){               // constructor for products
     this.filePath = `img/${name}.${endOfFile}`;
     this.title = name;
     this.votes = 0;
@@ -123,7 +124,7 @@ function voteForProductImages(event){
       productImageThree.removeEventListener('click', voteForProductImages);
       generateChartData();
       generateChart();
-      
+      productsToLS();
     }
     
   }
@@ -132,14 +133,18 @@ function voteForProductImages(event){
   productImageTwo.addEventListener('click', voteForProductImages);
   productImageThree.addEventListener('click', voteForProductImages);
   
-  
-  
+ function productsToLS() {
+    var stringifiedProducts = JSON.stringify(allProducts);
+    localStorage.setItem('lsproducts', stringifiedProducts);
+
+ }
   function generateChartData(){
     for(var i=0; i<allProducts.length; i++){
       namesArray.push(allProducts[i].title);
       votesArray.push(allProducts[i].votes);
     }
   }
+
 
 function generateChart(){
   var ctx = document.getElementById('myChart').getContext('2d');
@@ -190,6 +195,6 @@ function generateChart(){
       }
   });
 }
-
+//firstProductInstantiation();
 render();
 renderResults();
