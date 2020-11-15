@@ -101,7 +101,6 @@ function voteForProductImages(event){
     var titleOfClick = event.target.title;
 
 
-    console.log(titleOfClick);
     for(var i=0; i<allProducts.length; i++){
       if(titleOfClick === allProducts[i].title){
         allProducts[i].votes++;
@@ -117,32 +116,30 @@ function voteForProductImages(event){
     render();
     
     
-    
 
     if(totalVotes === 25){
       productImageOne.removeEventListener('click', voteForProductImages);
       productImageTwo.removeEventListener('click', voteForProductImages);
       productImageThree.removeEventListener('click', voteForProductImages);
-      generateChart();
       generateChartData();
-      renderResults();
-
+      generateChart();
+      
+    }
+    
   }
-
-}
-
-productImageOne.addEventListener('click', voteForProductImages);
-productImageTwo.addEventListener('click', voteForProductImages);
-productImageThree.addEventListener('click', voteForProductImages);
-
-
-
-function generateChartData(){
-  for(var i=0; i<allProducts.length; i++){
-    namesArray.push(allProducts[i].title);
-    votesArray.push(allProducts[i].votes);
+  
+  productImageOne.addEventListener('click', voteForProductImages);
+  productImageTwo.addEventListener('click', voteForProductImages);
+  productImageThree.addEventListener('click', voteForProductImages);
+  
+  
+  
+  function generateChartData(){
+    for(var i=0; i<allProducts.length; i++){
+      namesArray.push(allProducts[i].title);
+      votesArray.push(allProducts[i].votes);
+    }
   }
-}
 
 function generateChart(){
   var ctx = document.getElementById('myChart').getContext('2d');
@@ -151,14 +148,9 @@ function generateChart(){
       data: {
           labels: namesArray, 
           datasets: [{
-              label: 'Nunber of Votes',
+              label: '# of Votes',
               data: votesArray,
               backgroundColor: [
-
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',
                   'rgba(255, 206, 86, 0.2)',
@@ -166,13 +158,16 @@ function generateChart(){
                   'rgba(153, 102, 255, 0.2)',
                   'rgba(255, 159, 64, 0.2)',
                   'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',
                   'rgba(255, 206, 86, 0.2)',
                   'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)'
+                  'rgba(153, 102, 255, 0.2)',
               ],
-
               borderColor: [
                   'rgba(255, 99, 132, 1)',
                   'rgba(54, 162, 235, 1)',
@@ -197,3 +192,4 @@ function generateChart(){
 }
 
 render();
+renderResults();
