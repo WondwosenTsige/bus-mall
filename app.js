@@ -132,16 +132,15 @@ function voteForProductImages(event){
   productImageOne.addEventListener('click', voteForProductImages);
   productImageTwo.addEventListener('click', voteForProductImages);
   productImageThree.addEventListener('click', voteForProductImages);
-  renderResults();
-
-
-
-function generateChartData(){
-  for(var i=0; i<allProducts.length; i++){
-    namesArray.push(allProducts[i].title);
-    votesArray.push(allProducts[i].votes);
+  
+  
+  
+  function generateChartData(){
+    for(var i=0; i<allProducts.length; i++){
+      namesArray.push(allProducts[i].title);
+      votesArray.push(allProducts[i].votes);
+    }
   }
-}
 
 function generateChart(){
   var ctx = document.getElementById('myChart').getContext('2d');
@@ -194,3 +193,4 @@ function generateChart(){
 }
 
 render();
+renderResults();
