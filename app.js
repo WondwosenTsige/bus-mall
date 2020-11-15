@@ -117,23 +117,22 @@ function voteForProductImages(event){
     render();
     
     
-    
 
     if(totalVotes === 25){
       productImageOne.removeEventListener('click', voteForProductImages);
       productImageTwo.removeEventListener('click', voteForProductImages);
       productImageThree.removeEventListener('click', voteForProductImages);
-      generateChart();
       generateChartData();
-      renderResults();
-
+      generateChart();
+      
+    }
+    
   }
-
-}
-
-productImageOne.addEventListener('click', voteForProductImages);
-productImageTwo.addEventListener('click', voteForProductImages);
-productImageThree.addEventListener('click', voteForProductImages);
+  
+  productImageOne.addEventListener('click', voteForProductImages);
+  productImageTwo.addEventListener('click', voteForProductImages);
+  productImageThree.addEventListener('click', voteForProductImages);
+  renderResults();
 
 
 
