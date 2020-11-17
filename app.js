@@ -195,6 +195,5 @@ function generateChart(){
       }
   });
 }
-//firstProductInstantiation();
 render();
 renderResults();
